@@ -6,10 +6,8 @@ if len(sys.argv) != 3:
 
 
 def get_dns_records(domain):
-    # Create a DNS resolver
     resolver = dns.resolver.Resolver()
 
-    # Perform the DNS lookup
     try:
         answers = resolver.resolve(domain, sys.argv[2])
         return [rdata for rdata in answers]
